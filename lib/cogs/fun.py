@@ -47,7 +47,7 @@ class Fun(Cog):
         reason = reason.capitalize()
         reaction = ["memukul","menampar","menampol","menggaplok", "menendang"]
         await ctx.message.delete()
-        await ctx.send(f"""Klee {random.choice(reaction)} {member.mention}
+        await ctx.send(f"""Perintah diterima, {random.choice(reaction)} {member.mention}
 Alasan : {reason}""") # untuk {ctx.author.name}!
 
     @slap_member.error
