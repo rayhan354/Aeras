@@ -56,11 +56,16 @@ class Bot(BotBase):
         print("setup complete")
     
     def run(self, version):
+        self.VERSION = version
 
         print("running setup")
         self.setup()
+
+        with open("./lib/bot/token.0", "r", encoding="utf-8") as tf:
+            self.TOKEN = tf.read()
         
         print("running bot...")
+        super().run(self.TOKEN, reconnect = True)
     
     async def rules_reminder(self):
         channel = self.get_channel(dev_area)
