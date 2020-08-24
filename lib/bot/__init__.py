@@ -118,7 +118,6 @@ class Bot(BotBase):
         if not self.ready:
             self.guild = self.get_guild(Server)
             self.stdout = self.get_channel(746951322317881384) #bot-area
-            self.scheduler.add_job(self.rules_reminder, CronTrigger(day_of_week=0, hour=0, minute=0, second=0)) # 
             self.scheduler.start()
 
             while not self.cogs_ready.all_ready():
